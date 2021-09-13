@@ -25,21 +25,64 @@ fn fibonacci(n: u32) -> u32 {
 
 // Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” taking advantage of the repetition in the song.
 
-
 fn main() {
     // let celsius = convert_fahrenheit_to_celsius(20.);
     // let fahrenheit = convert_celsius_to_fahrenheit(10.);
 
     // println!("20 fahrenheit is {} celsius", celsius);
     // println!("10 celsius is {} fahrenheit", fahrenheit);
-    let number = 5;
-    let result = fibonacci(number);
+    // let number = 5;
+    // let result = fibonacci(number);
 
-    println!("The {}th fibonacci number is: {}", number, result)
+    // println!("The {}th fibonacci number is: {}", number, result)
+    the_twelve_days_of_christmas(1);
 }
 
-fn the_twelve_days_of_christmas() {
-    
+fn the_twelve_days_of_christmas(n: usize) {
+    let day = get_day(n);
+    println!("On the {} day of Christmas, my true love sent to me", day);
+    for element in [0..n] {
+        println!("{:?}", &GIFTS[element]);
+    }
+
+    if n < 12 {
+        the_twelve_days_of_christmas(n + 1);
+    }
+}
+
+const GIFTS: [&str; 12] = [
+    "A partridge in a pear tree",
+    "Two turtle doves, and",
+    "Three french hens",
+    "Four calling birds",
+    "Five golden rings",
+    "Six geese a-laying",
+    "Seven swans a-swimming",
+    "Eight maids a-milking",
+    "Nine ladies dancing",
+    "Ten lords a-leaping",
+    "Eleven pipers piping",
+    "Twelve drummers drumming",
+];
+
+fn get_day(n: usize) -> String {
+    let result = match n {
+        1 => "first",
+        2 => "second",
+        3 => "third",
+        4 => "fourth",
+        5 => "fifth",
+        6 => "sixth",
+        7 => "seventh",
+        8 => "eighth",
+        9 => "nineth",
+        10 => "tenth",
+        11 => "eleventh",
+        12 => "twelfth",
+        _ => "hundredth",
+    };
+
+    result.to_string()
 }
 
 // [Verse 1]
