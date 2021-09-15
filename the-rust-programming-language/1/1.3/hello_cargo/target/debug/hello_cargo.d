@@ -1,1 +1,0 @@
-/Users/rgowan/Repos/Personal/rust/the-rust-programming-language/1/1.3/hello_cargo/target/debug/hello_cargo: /Users/rgowan/Repos/Personal/rust/the-rust-programming-language/1/1.3/hello_cargo/src/main.rs
