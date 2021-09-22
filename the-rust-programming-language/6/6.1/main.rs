@@ -48,35 +48,42 @@
 //     V4(Ipv4Addr),
 //     V6(Ipv6Addr),
 // }
-#[derive(Debug)]
-enum Message {
-    Quit,
-    Move { x: i32, y: i32 },
-    Write(String),
-    ChangeColor(i32, i32, i32),
-}
+// #[derive(Debug)]
+// enum Message {
+//     Quit,
+//     Move { x: i32, y: i32 },
+//     Write(String),
+//     ChangeColor(i32, i32, i32),
+// }
 
-impl Message {
-    fn call(&self) {
-        println!("{:?}", self);
-        // method body would be defined here
-    }
-}
+// impl Message {
+//     fn call(&self) {
+//         println!("{:?}", self);
+//         // method body would be defined here
+//     }
+// }
 
-struct QuitMessage; // unit struct
-struct MoveMessage {
-    x: i32,
-    y: i32,
-}
-struct WriteMessage(String); // tuple struct
-struct ChangeColorMessage(i32, i32, i32); // tuple struct
+// struct QuitMessage; // unit struct
+// struct MoveMessage {
+//     x: i32,
+//     y: i32,
+// }
+// struct WriteMessage(String); // tuple struct
+// struct ChangeColorMessage(i32, i32, i32); // tuple struct
 
-fn main() {
-    let m = Message::Write(String::from("hello"));
-    m.call();
-}
+// fn main() {
+//     let m = Message::Write(String::from("hello"));
+//     m.call();
+// }
 
 enum Option<T> {
     None,
     Some(T),
+}
+
+fn main() {
+    let some_number = Some(5);
+    let some_string = Some("a string");
+
+    let absent_number: Option<i32> = None;
 }
