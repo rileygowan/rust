@@ -1,0 +1,1 @@
+pub fn do_cool_stuff() {}
